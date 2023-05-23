@@ -42,6 +42,7 @@ public  class AddTwoNumbers_makenewlist {
             }
             sum = sum + carry;
             carry = sum / 10;//for the next loop
+//            creating new node with sum or the last letter of sum as the val
             ListNode node = new ListNode(sum % 10);
             curr.next = node;
             curr = curr.next;
