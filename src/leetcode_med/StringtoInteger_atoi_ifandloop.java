@@ -34,6 +34,10 @@ public class StringtoInteger_atoi_ifandloop {
 //            '5'---->5
 
             int digit=s.charAt(i)-'0';
+//            when the answer is  2,147,483,647(last integer),before the final loop,res=2,147,483,64 because the last digit(7)
+//                    will be added at next loop.by this time digit =7,with this info we go to the condition.
+//            2,147,483,64>max/10..here we use max/10..because we havent added the last digit to res
+//              here the second condition, 2,147,483,64=max/10     is satisfied and digit is not >7..so answer is intger,doesnt go to condition
             if(res>(Integer.MAX_VALUE/10) || (res==(Integer.MAX_VALUE/10) && digit>7)){
                 return isNeg?Integer.MIN_VALUE:Integer.MAX_VALUE;
              }
